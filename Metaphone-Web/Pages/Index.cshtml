@@ -4,9 +4,9 @@
     ViewData["Title"] = "Home page";
 }
 
-<div>
-    <form method="post">
-        <input type="text" name="text" />
-        <input type="submit" value="Send" />
-    </form>
-</div>
+<form method="post">
+    <textarea class="mb-2" cols="50" rows="10" name="text" maxlength="500" placeholder="Enter a text to transcribe it with Metaphone algorithm"></textarea><br />
+    <input class="mb-3" type="submit" value="Transcribe" /><br />
+    <textarea class="mb-2" cols="50" rows="10" name="transcribed" maxlength="500" readonly="">@Model.Text</textarea><br />
+    <input type="submit" value="Clear" />
+</form>

@@ -6,32 +6,31 @@ namespace Metaphone_Web.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
+        public string? Text { get; set; }
 
         public void OnGet()
         {
             
         }
-        public void OnPost(string text)
+        public void OnPost(string text, string transcribed)
         {
             bool isValid = Validate(text);
+            if (isValid)
+                Text = text;
+            else Text = "Input text is not valid!";
+            if (!string.IsNullOrEmpty(transcribed))
+            {
+                Text = "";
+            }
         }
 
         private bool Validate(string text)
         {
-            //bool isAllLetters = false;
             bool isOnlyLetters = false;
             if (!string.IsNullOrEmpty(text))
             {
-                //isAllLetters = text.All(c => char.IsLetter(c));
                 isOnlyLetters = Regex.IsMatch(text, @"^[a-zA-Z\s]+$");
             }
-            //return isAllLetters;
             return isOnlyLetters;
         }
     }
