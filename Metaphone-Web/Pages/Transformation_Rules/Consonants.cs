@@ -84,42 +84,42 @@
 
                 if (word.Contains("SIA"))
                 {
-                    word.Replace("S", "X");
+                    word = word.Replace("S", "X");
                 }
 
                 if (word.Contains("SIO"))
                 {
-                    word.Replace("S", "X");
+                    word = word.Replace("S", "X");
                 }
 
                 if (word.Contains("SH"))
                 {
-                    word.Replace("S", "X");
+                    word = word.Replace("S", "X");
                 }
 
                 if (word.Contains("TIA"))
                 {
-                    word.Replace("T", "X");
+                    word = word.Replace("T", "X");
                 }
 
                 if (word.Contains("TIO"))
                 {
-                    word.Replace("T", "X");
+                    word = word.Replace("T", "X");
                 }
 
                 if (word.Contains("TH"))
                 {
-                    word.Replace("TH", "0");
+                    word = word.Replace("TH", "0");
                 }
 
                 if (word.Contains("TCH"))
                 {
-                    word.Remove(word.IndexOf("T"), 1);
+                    word = word.Remove(word.IndexOf("T"), 1);
                 }
 
                 if (word.Contains('Q'))
                 {
-                    word = word.Replace("Q", "K");
+                    word = word = word.Replace("Q", "K");
                 }
 
                 if (word.Contains('V'))

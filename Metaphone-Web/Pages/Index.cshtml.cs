@@ -1,4 +1,5 @@
 ﻿using Metaphone_Web.Pages.Transformation_Rules;
+using Metaphone_Web.Pages.Validation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.RegularExpressions;
@@ -9,36 +10,21 @@ namespace Metaphone_Web.Pages
     {
         public string? Text { get; set; }
         public string? Transcribed { get; set; }
-
-        public void OnGet()
-        {
-            
-        }
+        
         public void OnPost(string text, string transcribed)
         {
-            Transformation transform = new Transformation();
-
-            bool isValid = Validate(text);
+            InputValidation validate = new InputValidation();
+            bool isValid = validate.InputValidate(text);
             if (isValid)
                 Text = text.ToUpper();
-            else Text = "Input text is not valid!";
+            else Text = " ";
             if (!string.IsNullOrEmpty(transcribed))
             {
                 Transcribed = "";
             }
-
+            Transformation transform = new Transformation();
             string transformed = transform.Filters(Text);
             Text = transformed;
-        }        
-
-        private bool Validate(string text)
-        {
-            bool isOnlyLetters = false;
-            if (!string.IsNullOrEmpty(text))
-            {
-                isOnlyLetters = Regex.IsMatch(text, @"^[a-zA-Z\s]+$");
-            }
-            return isOnlyLetters;
         }
     }
 }
