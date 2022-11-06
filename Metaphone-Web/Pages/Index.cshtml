@@ -7,6 +7,14 @@
 <form method="post">
     <textarea class="mb-2" cols="50" rows="10" name="text" maxlength="500" placeholder="Enter a text to transcribe it with Metaphone algorithm"></textarea><br />
     <input class="mb-3" type="submit" value="Transcribe" /><br />
-    <textarea class="mb-2" cols="50" rows="10" name="transcribed" maxlength="500" readonly="">@Model.Text</textarea><br />
-    <input type="submit" value="Clear" />
+    @if (string.IsNullOrEmpty(Model.Transcribed))
+    {
+        <textarea class="mb-2" cols="50" rows="10" name="transcribed" maxlength="500" readonly="">@Model.Text</textarea><br />
+    }
+    else
+    {
+       <textarea class="mb-2" cols="50" rows="10" name="transcribed" maxlength="500" readonly="">@Model.Text</textarea><br /> 
+    }
+
+    @*<input type="submit" value="Clear" />*@
 </form>
