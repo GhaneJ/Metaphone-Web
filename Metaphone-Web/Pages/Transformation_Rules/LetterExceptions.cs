@@ -14,11 +14,11 @@
                 word = word.Remove(drop, 1);
 
             }
-            if (word.StartsWith('X'))
-            {
-                word = word.Replace('X', 'S');
-            }
-            if (word.StartsWith("WH"))
+            //if (word.StartsWith('X'))
+            //{
+            //    word = word.Replace('X', 'S');
+            //}
+            if ((word.StartsWith("WH") || word.StartsWith("AE")))
             {
                 int drop = word.IndexOf(word.Substring(1, 1));
                 word = word.Remove(drop, 1);

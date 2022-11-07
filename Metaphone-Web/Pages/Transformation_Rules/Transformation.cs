@@ -12,12 +12,12 @@
         string? vowelDrop;
         public string Filters(string word)
         {
-            dropSilent = exceptedletters.DropBeginningSilentLetters(word);            
+            removeDuplicate = adjacent.DropDuplicateConsonant(word);
+            dropSilent = exceptedletters.DropBeginningSilentLetters(removeDuplicate);            
             consonantLetters = consonants.ConsonantTransformer(dropSilent);
             vowelDrop = vowels.VowelRemover(consonantLetters);
-            removeDuplicate = adjacent.DropDuplicateConsonant(vowelDrop);
 
-            return removeDuplicate;
+            return vowelDrop;
         }
     }
 }

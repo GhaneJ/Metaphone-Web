@@ -18,7 +18,6 @@
                     res_ind++;
                 }
                 ip_ind++;
-
             }
 
             word = new String(arr);

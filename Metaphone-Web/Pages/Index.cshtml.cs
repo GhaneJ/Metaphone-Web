@@ -1,8 +1,6 @@
 ﻿using Metaphone_Web.Pages.Transformation_Rules;
 using Metaphone_Web.Pages.Validation;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Text.RegularExpressions;
 
 namespace Metaphone_Web.Pages
 {

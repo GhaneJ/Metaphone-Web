@@ -28,12 +28,7 @@
 
                 if (word.Contains("CH"))
                 {
-                    word = word.Replace("CH", "X");
-                }
-
-                if (word.Contains("CI") || word.Contains("CE") || word.Contains("CY"))
-                {
-                    word = word.Replace('C', 'S');
+                    word = word.Replace("CH", "XH");
                 }
 
                 else if (word.Contains('C'))
@@ -50,6 +45,11 @@
                 else if (word.Contains('D'))
                 {
                     word = word.Replace('D', 'T');
+                }
+
+                if (word.Contains("CE") || word.Contains("CI") || word.Contains("CY"))
+                {
+                    word = word.Replace('C', 'S');
                 }
 
                 if (word.Contains("GN") || word.Contains("GNED"))
@@ -119,7 +119,7 @@
 
                 if (word.Contains('Q'))
                 {
-                    word = word = word.Replace("Q", "K");
+                    word = word.Replace("Q", "K");
                 }
 
                 if (word.Contains('V'))
@@ -139,6 +139,11 @@
 
                 if (word.Contains('X'))
                 {
+                    if(word.IndexOf('X') == 0)
+                    {
+                        word = word.Replace("X", "S");
+                    }
+                    else
                     word = word.Replace("X", "KS");
                 }
 
